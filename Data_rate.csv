@@ -1,0 +1,8 @@
+mode,mode color,switching threshold,data rate
+1,Red,500,31.895
+2,Orange,400,43.505
+3,Yellow,300,52.857
+4,Green,190,63.937
+5,Blue,90,77.071
+6,Pink,35,93.854
+7,Purple,5.56,119.13
