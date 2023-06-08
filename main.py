@@ -9,8 +9,8 @@ creator.create("Individual", list, fitness=creator.FitnessMax)
 # Data Preparation
 airports = {'LHR':[51.4700, 0.4543, 81.73],'EWR':[40.6895, 74.1745, 8.72]}
 link_delay = 50  # ms
-dataset = r'X:\New folder\Data_rate.csv'
-datarate = r'X:\New folder\Data_rate.csv'
+dataset = r'X:\New folder\Cn-project\Data_rate.csv'
+datarate = r'X:\New folder\Cn-project\Data_rate.csv'
 # Reading data from CSV files
 def read_coordinates_from_csv(dataset):
     coordinates = []
@@ -35,8 +35,8 @@ def read_data_from_csv(datarate):
             data.append((mode, mode_color, switching_threshold, data_rate))
     return data
 
-coordinates = read_coordinates_from_csv(r'X:\New folder\dataset.csv')
-data = read_data_from_csv(r'X:\New folder\Data_rate.csv')
+coordinates = read_coordinates_from_csv(r'X:\New folder\Cn-project\dataset.csv')
+data = read_data_from_csv(r'X:\New folder\Cn-project\Data_rate.csv')
 
 # Model Formulation: this is still a work under progress
 def evaluate(induvidual):
@@ -50,10 +50,7 @@ def evaluate(induvidual):
     return data_rates
 
 def genetic_sorting(datarate_file):
-
-
-
-    # Read the data rate transmission file
+# Read the data rate transmission file
     with open(datarate_file, "r") as f:
         reader = csv.reader(f)
         data_rate_transmission = []
@@ -72,7 +69,6 @@ def genetic_sorting(datarate_file):
 
     # Select two parents from the population
         parents = random.sample(population, 2)
-
     # Create a child
         child = []
         for i in range(len(parents[0])):
@@ -110,7 +106,7 @@ def main():
     population_size = 150
     generations = 100
     
-    population = toolbox.population(n=population_size)
+    population = toolbox.population(population_size)
     
     for gen in range(generations):
         offspring = algorithms.varAnd(population, toolbox, cxpb=0.5, mutpb=0.1)
