@@ -3,7 +3,7 @@ from mpl_toolkits.mplot3d import Axes3D  # Import Axes3D from mpl_toolkits.mplot
 import pandas as pd
 
 # Read CSV file
-data = pd.read_csv(r"X:\New folder\dataset.csv")
+data = pd.read_csv(r"X:\New folder\Cn-project\dataset.csv")
 
 # Extract latitude, longitude, and altitude values
 latitudes = data['Latitude']
