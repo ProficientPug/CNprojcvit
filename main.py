@@ -1,5 +1,6 @@
 import csv
 import random
+import folium
 from deap import base, creator, tools, algorithms
 
 # Define the Problem
@@ -25,7 +26,7 @@ def read_coordinates_from_csv(dataset):
 
 def read_data_from_csv(datarate):
     data = []
-    with open(datarate, "r") as file:
+    with open(r'X:\New folder\Cn-project\Data_rate.csv', "r") as file:
         reader = csv.DictReader(file)
         for row in reader:
             mode = row["mode"]
@@ -50,8 +51,9 @@ def evaluate(induvidual):
     return data_rates
 
 def genetic_sorting(datarate_file):
+    
 # Read the data rate transmission file
-    with open(datarate_file, "r") as f:
+    with open(r'X:\New folder\Cn-project\dataset.csv', "r") as f:
         reader = csv.reader(f)
         data_rate_transmission = []
         for row in reader:
@@ -105,7 +107,6 @@ toolbox.register("select", tools.selTournament, tournsize=3)
 def main():
     population_size = 150
     generations = 100
-    
     population = toolbox.population(population_size)
     
     for gen in range(generations):
