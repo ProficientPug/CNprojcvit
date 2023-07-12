@@ -107,7 +107,7 @@ toolbox.register("select", tools.selTournament, tournsize=3)
 def main():
     population_size = 150
     generations = 100
-    population = toolbox.population(population_size)
+    population = toolbox.population
     
     for gen in range(generations):
         offspring = algorithms.varAnd(population, toolbox, cxpb=0.5, mutpb=0.1)
